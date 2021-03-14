@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Prediction{% endblock %}
+
+{% block content %}
+
+<hr style="border: 0.5px solid;">
+<h5>Введенные вами данные:</h5>
+<div class="container">
+            <div class="row"> 
+                <div class="col">
+                	<h6>Тип кузова:</h6>
+                	<h6>Коробка передач:</h6>
+                	<h6>Расположение руля:</h6>
+                	<h6>Привод:</h6>
+                	<h6>Вид топлива:</h6>
+                	<h6>Год выпуска:</h6>
+                	<h6>Пробег:</h6>
+                	<h6>Объем двигателя:</h6>
+                </div>
+                <div class="col">
+                	{% for i in input_data %}
+                		<h6>{{i}}</h6>
+                	{% endfor %}
+                </div>
+        </div>
+</div>
+<hr style="border: 0.5px solid;">
+<h5>Примерная стоимость автомобиля:</h5>
+<h3 class="text-center">{{ prediction }} тенге</h3>
+
+<br>
+<form action="/index" method="get">
+	<button type="submit" class="btn btn-primary btn-block btn-large btn-dark">Попробовать снова</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+.container-fluid {
+	padding: 2em;
+	content: center;
+}
+
+.col-6 {
+	padding: 2.5em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.label_text {
+	font-size: 1.15em;
+}
+
+.rounded_corners {
+	border-radius: 0.5em;
+}

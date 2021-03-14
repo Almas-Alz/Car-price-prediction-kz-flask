@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+
+{% block content %}
+
+
+<p class="h2 text-center">Прогнозирование цены автомобиля</p>
+                	<br>
+                      <form action="#" method="post">
+                      	<div class="form-group">
+                		<label for="body" class="label_text">Кузов:</label>
+                			<select class="form-select form-control" id="body" name="body" required>
+							  <!-- <option>Выберите кузов автомобиля</option> -->
+							  <option value="00010">Седан</option>
+							  <option value="10000">Внедорожник</option>
+							  <option value="01000">Кроссовер</option>
+							  <option value="00100">Минивэн</option>
+							  <option value="00001">Универсал</option>
+							  <option value="00000">Хэтчбек</option>
+							</select>
+						</div>
+
+						<div class="form-group" id="transmission">
+							<label for="transmission" class="label_text">Коробка передач:</label>
+							<br>
+							<div class="btn-group btn-group-toggle" data-toggle="buttons" required>
+							  <label class="btn btn-outline-dark">
+							    <input type="radio" name="transmission" id="option1" autocomplete="off" value="1" required> Автомат
+							  </label>
+							  <label class="btn btn-outline-dark">
+							    <input type="radio" name="transmission" id="option2" autocomplete="off" value="0" required> Механика
+							  </label>
+							</div>
+						</div>
+
+						<div class="form-group" id="wheel">
+							<label for="wheel" class="label_text">Руль:</label>
+							<br>
+							<div class="btn-group btn-group-toggle" data-toggle="buttons" required>
+							  <label class="btn btn-outline-dark">
+							    <input type="radio" name="wheel" id="option1" autocomplete="off" value="1" required> Слева
+							  </label>
+							  <label class="btn btn-outline-dark">
+							    <input type="radio" name="wheel" id="option2" autocomplete="off" value="0" required> Справа
+							  </label>
+							</div>
+						</div>		
+
+						<div class="form-group" id="drive">
+							<label for="drive" class="label_text">Привод:</label>
+							<br>
+							<div class="btn-group btn-group-toggle" data-toggle="buttons" required>
+							  <label class="btn btn-outline-dark">
+							    <input type="radio" name="drive" id="option1" autocomplete="off" value="10" required> Задний привод
+							  </label>
+							  <label class="btn btn-outline-dark">
+							    <input type="radio" name="drive" id="option2" autocomplete="off" value="01" required> Передний привод
+							  </label>
+							  <label class="btn btn-outline-dark">
+							    <input type="radio" name="drive" id="option3" autocomplete="off" value="00" required> Полный привод
+							  </label>
+							</div>
+						</div>	
+
+						<div class="form-group" id="fuel">
+							<label for="fuel" class="label_text">Вид топлива:</label>
+							<br>
+							<div class="btn-group btn-group-toggle" data-toggle="buttons" required>
+							  <label class="btn btn-outline-dark">
+							    <input type="radio" name="fuel" id="option1" autocomplete="off" value="10" required> Бензин
+							  </label>
+							  <label class="btn btn-outline-dark">
+							    <input type="radio" name="fuel" id="option2" autocomplete="off" value="01" required> Газ-Бензин
+							  </label>
+							  <label class="btn btn-outline-dark">
+							    <input type="radio" name="fuel" id="option3" autocomplete="off" value="00" required> Дизель
+							  </label>
+							</div>
+						</div>	
+
+
+						<div class="form-group">
+                			<label for="Years" class="label_text">Год выпуска:</label>
+							<select id="Years" class="form-select form-control" name="year" required></select>
+							<script type="text/javascript">
+							    window.onload = function () {
+							        //Reference the DropDownList.
+							        var ddlYears = document.getElementById("Years");
+							 
+							        //Determine the Current Year.
+							        var currentYear = (new Date()).getFullYear();
+							 
+							        //Loop and add the Year values to DropDownList.
+							        for (var i = 1950; i <= currentYear; i++) {
+							            var option = document.createElement("OPTION");
+							            option.innerHTML = i;
+							            option.value = i;
+							            ddlYears.appendChild(option);
+							        }
+							    };
+							</script>
+						</div>
+
+						<div class="form-group">
+							<label for="mileage" class="label_text">Пробег:</label>
+							<input type="number" name="mileage" class="form-control" id="mileage" placeholder="Введите пробег автомобиля" required>
+						</div>
+
+						<div class="form-group">
+							<label for="volume" class="label_text">Объем двигателя:</label>
+							<input type="number" step="0.1" name="volume" class="form-control" id="volume" placeholder="Введите объем двигателя автомобиля" required>
+						</div>
+
+
+                        <button type="submit" class="btn btn-primary btn-block btn-large btn-dark">Submit</button>
+                      </form>
+
+                      <br>
+                      
+
+
+{% endblock %}
